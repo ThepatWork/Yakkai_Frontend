@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub&family=Noto+Sans+Thai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Krub&family=Noto+Sans+Thai&display=swap');
+
+
+.backgroundLogin {
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgb(255, 255, 255);
+  background-image: url('https://images.unsplash.com/photo-1513568917837-e5be8262f18f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2566&q=80');
+}
+
+.Login_Container {
+  margin: 0;
+  top: 150px;
+  left: 50%;
+  position: absolute;
+  width: 450px;
+  height: 550px;
+  text-align: center;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border-top: 10px solid #ff4304;
+  border-bottom: 10px solid #ff4304;
+  background-color: rgba(254, 254, 254, 0.6);
+}
+
+.box_login h4 {
+  font-family: 'Borel', cursive, 'Krub', sans-serif, 'Noto Sans Thai', sans-serif;
+  color: #ff8800;
+  font-size: 50px;
+  margin-top: 60px;
+  margin: 60px 0px 0px 0px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.box_login h5 {
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 20px;
+  color: #464d64;
+  letter-spacing: 1.5px;
+  margin-top: -15px;
+  margin-bottom: 70px;
+}
+
+.box_login input[type='text'],
+.box_login input[type='password'] {
+  border: 1px solid #00000057;
+  display: block;
+  margin: 20px auto;
+  background: #fafafa73;
+  border-radius: 5px;
+  padding: 14px 10px;
+  width: 320px;
+  outline: none;
+  color: #000000;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+::-webkit-input-placeholder {
+  color: #0000002d;
+}
+
+.box_login input[type='text']:focus,
+.box_login input[type='password']:focus {
+  font-family: 'Noto Sans Thai', sans-serif;
+  border: 1px solid #000000;
+}
+
+a {
+  color: #5c7fda;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+label input[type='checkbox'] {
+  font-family: 'Noto Sans Thai', sans-serif;
+  display: none;
+}
+
+label span.slider {
+  height: 13px;
+  width: 13px;
+  border: 2px solid #464d64;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  left: 7.5%;
+}
+.cover_btn1_login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btn1 {
+  border: 0;
+  background: #ff5500;
+  color: #dfdeee;
+  border-radius: 100px;
+  width: 340px;
+  height: 49px;
+  font-size: 16px;
+  /* position: absolute;
+  top: 79%;
+  left: 12%; */
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 1px 1px 0.1px .5px rgba(0, 0, 0, 0.361);
+}
+
+.btn1:hover {
+  background: #b40900;
+}
+
+.rmb {
+  position: absolute;
+  margin-left: -24%;
+  margin-top: 0px;
+  color: #dfdeee;
+  font-size: 13px;
+}
+
+.forgetpass {
+  position: relative;
+  float: right;
+  right: 28px;
+}
+
+.dnthave {
+  position: absolute;
+  top: 92%;
+  left: 24%;
+}
+
+[type='checkbox']:checked+span.slider:before {
+  font-family: FontAwesome;
+  font-size: 16px;
+  content: '\f00c';
+  position: absolute;
+  top: -4px;
+  color: #896cec;
+  left: -1px;
+  width: 13px;
+}
+
+.typcn {
+  position: absolute;
+  left: 339px;
+  top: 282px;
+  color: #000000;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.typcn.active {
+  color: #7f60eb;
+}
+
+.footer .fa {
+  color: #7f5feb;
+}
+
+/* บันทัด checkbox */
+.containercheckbox {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.checkbox-containercheckbox {
+  flex: 0.1;
+}
+
+.text-containercheckbox {
+  font-family: 'Noto Sans Thai', sans-serif;
+  flex: 0.5;
+  text-align: left;
+  font-size: 13px;
+  color: #464d64;
+}
+
+.link-containercheckbox {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .Login_Container {
+    margin: 0;
+    top: 100px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 550px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transform: translateX(-50%);
+    border-top: 10px solid #ff4304;
+    border-bottom: 10px solid #ff4304;
+    background-color: rgba(254, 254, 254, 0.6);
+  }
+}

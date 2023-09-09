@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub&family=Noto+Sans+Thai&display=swap');
+
+.TP_font {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+}
+
+.product_container {
+    font-family: 'Noto Sans Thai', sans-serif;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* CSS สำหรับ desktop */
+.product_container_img {
+    width: 40%;
+    text-align: left;
+    text-align: center;
+}
+
+.product_container_text {
+    text-align: left;
+    width: 60%;
+    padding: 0rem 1rem;
+}
+
+.TP_text_product {
+    background-color: rgba(0, 0, 0, 0.32);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.TP_text_product_seller {
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 2rem;
+    border-radius: 15px;
+    color: #2d1400;
+    font-size: 16px;
+}
+
+.text_space {
+    background: #00000033;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+/* ========================== IMG ============================ */
+.TP_main_img_product {
+    width: 95% !important;
+    border-radius: 20px;
+}
+
+.product_images {
+    width: 10%;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    grid-auto-rows: 100px;
+    gap: 8px;
+    margin-left: 1rem;
+}
+
+.product_images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.TP_IMG {
+    width: 100% !important;
+    height: 100px !important;
+    object-fit: cover !important;
+}
+
+/* ================================================================ */
+.btn_product,
+.btn_product1,
+.btn_product2 {
+    font-family: 'Noto Sans Thai', sans-serif;
+    width: 30%;
+    height: 60px;
+    margin: 0px 5px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 2px solid #ffd8d853;
+    transition: all 0.3s ease;
+}
+
+.btn_product1 {
+    background-color: rgb(228, 68, 0);
+}
+
+.btn_product2 {
+    background-color: rgb(43, 117, 255);
+}
+
+
+.btn_product:active,
+.btn_product1:active,
+.btn_product2:active {
+    background-color: rgb(48, 124, 17);
+}
+
+.btn_product:hover,
+.btn_product1:hover,
+.btn_product2:hover {
+    box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.477);
+}
+
+.btn_select_file,
+.Btn_upload {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.Btn_upload:hover {
+    background-color: #0056b3;
+}
+
+.btn_select_file {
+    background: #ff7a05;
+}
+
+.btn_select_file:hover {
+    background-color: #ff4d00;
+}
+
+.Btn_cancle_upload {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #ccc;
+}
+
+.Btn_cancle_upload:hover {
+    background-color: #0056b3;
+}
+
+.Btn_select_file {
+    font-family: 'Noto Sans Thai', sans-serif;
+    padding: 6%;
+    width: 100%;
+    height: 200px;
+    margin: 0px 5px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 2px solid #ffd8d853;
+    background-color: #00000028;
+    transition: all 0.3s ease;
+}
+
+.Btn_select_file:hover {
+    background-color: #0056b3;
+}
+
+.file-upload-progress {
+    text-align: start !important;
+    margin: 20px;
+    width: 80%;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+    direction: rtl !important;
+}
+
+.file-upload-progress p {
+    color: #333;
+    font-size: 16px;
+}
+
+/* ********************************************************** */
+.file-upload-container {
+    width: 100%;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+.image-card {
+    background-color: rgba(255, 255, 255, 0.304);
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+}
+
+.IMG_Upload {
+    width: 150px !important;
+    height: 120px !important;
+}
+
+/* ========================== shop =================================== */
+.content_splace_shop {
+    display: flex;
+}
+
+.container_product_in_shop {
+    width: 60%;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.container_shop {
+    width: 40%;
+    background-color: #00000038;
+    border-radius: 20px;
+    margin-left: 1rem;
+    padding-top: 1rem;
+}
+
+.card_review_in_shop {
+    background-color: #ffffffb8;
+    color: #333;
+    width: 90%;
+    padding: 10px;
+    margin: 0rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 20px;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card_review_in_shop:hover {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* ***********************  show reviews  ************************* */
+.content_reviews {
+    width: 90%;
+    height: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reviews {
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.reviews::-webkit-scrollbar {
+    width: 10px;
+}
+
+.reviews::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.386);
+    border-radius: 5px;
+}
+
+.reviews::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.067);
+}
+
+.btn_need_review,
+.btn_need_report,
+.btn_submit_review {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    border: 2px solid rgba(0, 0, 0, 0.325);
+    margin: 1rem 0.5rem 0.5rem 0rem;
+    border-radius: 15px;
+    font-size: 16px;
+    height: 50px;
+}
+
+.btn_need_review {
+    background-color: #008736;
+    width: 200px;
+}
+
+.btn_need_report {
+    background-color: #ff0000;
+    width: 120px;
+}
+
+.btn_submit_review {
+    background-color: #008736;
+    width: 200px;
+}
+
+.btn_need_review:hover,
+.btn_need_report:hover,
+.btn_submit_review:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.477);
+}
+
+/* ***********************  popup for reviews  ************************* */
+.popup_comment {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_reviews {
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.popup_content_comment {
+    background-color: rgba(0, 0, 0, 0.338);
+    width: 60%;
+    height: 700px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close_button_popup_comment {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.star_review_comment {
+    font-size: 4rem !important;
+    margin-top: 2rem;
+    background: #ffffff42;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+}
+
+.textarea_comment {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    background-color: #ffffff6b;
+    resize: none;
+    height: 300px;
+    width: 60%;
+    margin-top: 2rem;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #333;
+    padding: 1rem;
+}
+
+/* ***********************  Fraud Report  ************************* */
+.container_fraud_report {
+    display: flex;
+}
+
+.topic_main_Fraud_Report {
+    background-color: #00000025;
+    border-radius: 15px;
+    padding: 10px;
+    color: #ffffff;
+    border: 5px solid #00000009;
+}
+
+.container_profile_seller_Fraud_Report {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container_information_Fraud_Report {
+    display: block;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.normal_input,
+.textarea_input {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    height: 50px;
+    width: 95%;
+    border-radius: 15px;
+    border: none;
+    background: #ffffff55;
+    outline: none;
+    padding: 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+.container_information_Fraud_Report textarea {
+    resize: none;
+    height: 200px;
+}
+
+.Fraud_Repoard_form {
+    background-color: #ffffff55;
+    padding: 5%;
+    border-radius: 15px;
+    color: #333;
+}
+
+.btn_FraudReport {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    font-size: 20px;
+    margin: 2rem 0 0 0;
+    height: 50px;
+    width: 60%;
+    border-radius: 10px;
+    background-color: #ff0808;
+    border: 0;
+    box-shadow: 4px 4px 5px #00000055;
+}
+
+.btn_FraudReport:hover {
+    scale: 1.1;
+    box-shadow: 4px 4px 5px #00000055;
+}
+
+/* ================================================================ */
+@media (max-width: 768px) {
+    .subcontentPage {
+        display: block !important;
+    }
+
+    .product_container {
+        display: block;
+    }
+
+    .TP_text_product {
+        background-color: rgba(0, 0, 0, 0.32);
+        padding: 20px;
+        border-radius: 15px;
+        width: 85%;
+    }
+
+    .TP_main_img_product {
+        height: 80% !important;
+        border-radius: 20px;
+    }
+
+    .product_container_img {
+        width: 100%;
+    }
+
+    .product_container_text {
+        width: 80vw;
+        padding-top: 20px;
+    }
+
+    .product_images {
+        width: 90%;
+        display: grid;
+        gap: 5px;
+        margin-left: -2.5px !important;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 0.5fr));
+    }
+
+    .TP_IMG {
+        width: 60px !important;
+        height: 70px !important;
+    }
+
+    .text_space {
+        width: 100% !important;
+        padding: 0px !important;
+    }
+
+    .btn_want_to_buy {
+        display: flex !important;
+        margin-top: 50px !important;
+    }
+
+    .btn_product1,
+    .btn_product2 {
+        font-family: 'Noto Sans Thai', sans-serif;
+        font-size: 12px;
+        width: 30%;
+        height: 60px;
+        margin: 0px 5px 50px 0px;
+        border-radius: 15px;
+        border: 2px solid #ffd8d853;
+        transition: all 0.3s ease;
+    }
+
+    .text_space input,
+    Textarea {
+        margin: 2px !important;
+        padding: 2px !important;
+        margin-right: 20px !important;
+    }
+
+    /* ========================== shop =================================== */
+    .content_splace_shop {
+        display: block;
+    }
+
+    .container_product_in_shop {
+        width: 100%;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .container_shop {
+        margin: 0;
+        width: 100%;
+    }
+
+    .star_review_comment {
+        font-size: 2rem !important;
+        margin-top: 2rem;
+        background: #ffffff55;
+        padding: 1rem 2rem;
+        border-radius: 20px;
+    }
+
+    .textarea_comment {
+        font-family: 'Noto Sans Thai', sans-serif !important;
+        resize: none;
+        height: 300px;
+        width: 95%;
+        margin-top: 2rem !important;
+        background-color: #ffffff6b;
+        border-radius: 15px;
+        font-size: 18px;
+        color: #333;
+        padding: 1.5rem;
+    }
+
+    .popup_content_comment {
+        width: 90%;
+    }
+
+    /* ***********************  Fraud Report  ************************* */
+    .container_fraud_report {
+        display: block;
+    }
+
+    .container_profile_seller_Fraud_Report {
+        width: 98%;
+        padding: 0px;
+    }
+
+    .container_information_Fraud_Report {
+        width: 98%;
+        padding: 0px;
+        margin-top: 1rem;
+    }
+
+    .btn_FraudReport {
+        font-family: 'Noto Sans Thai', sans-serif !important;
+        font-size: 20px;
+        border: 0;
+        width: 100%;
+        height: 50px;
+        margin: 2rem 0 0 0;
+        border-radius: 10px;
+        background-color: #ff0808;
+        box-shadow: 4px 4px 5px #00000055;
+    }
+
+    .btn_FraudReport:hover {
+        scale: 1.1;
+        box-shadow: 4px 4px 5px #00000055;
+    }
+    /* ================================================================ */
+}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub&family=Noto+Sans+Thai&display=swap');
+
+.container_admin_home {
+    width: 90%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+    background: radial-gradient(circle, rgba(147, 147, 147, 0) 0%, rgb(255, 198, 111) 100%);
+}
+
+.menu_admin {
+    flex: 1;
+    margin: 1rem;
+    height: 300px;
+    max-width: 300px;
+    min-width: 300px;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgb(255, 119, 0) 0%, rgb(255, 198, 111) 100%);
+}
+
+.menu_admin:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.menu_admin img {
+    margin: 20px !important;
+    width: 200px;
+    margin: auto auto;
+    filter:drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.5)); 
+}
+
+.menu_admin p {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.btn_add_admin{
+    font-family: 'Noto Sans Thai', sans-serif !important;
+    font-size: 20px;
+    color: #333;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px solid #00000020;
+    background-color:rgb(218, 218, 218);
+    filter:drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5)); 
+}
+.btn_add_admin:hover{
+    background-color:rgb(102, 100, 100);
+    color: #fff;
+}
+  
