@@ -1,8 +1,8 @@
 {
     "redirects": [
       {
-        "source": "/photo",
-        "destination": "vite.svg",
+        "source": "/forget_password",
+        "destination": "index.html",
         "permanent": false
       }
     ]
