@@ -2,7 +2,7 @@
     "redirects": [
       {
         "source": "/forget_password",
-        "destination": "index.html",
+        "destination": "forget_password",
         "permanent": false
       }
     ]
