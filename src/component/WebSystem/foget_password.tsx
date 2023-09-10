@@ -4,7 +4,7 @@ import '../../css/checkbox.css';
 
 import Swal from 'sweetalert2';
 import { sendEmaiChangePassword, getUserByEmail } from './HTTP_Request ';
-import { Link } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
 function ForgetPassword() {
     const [email, setEmail] = useState('');
@@ -27,7 +27,7 @@ function ForgetPassword() {
                     cancelButtonText: 'ตรวจสอบ Email อีกครั้ง',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        <Link to='/CreateUser'/>
+                        <Navigate to="/CreateUser" replace={true} />
                     }
                 })
 
