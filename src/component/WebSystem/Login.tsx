@@ -70,9 +70,7 @@ function Login() {
               </div>
               <div className="text-containercheckbox" style={{ marginLeft: '10px', color: '#333' }}>แสดงรหัสผ่าน</div>
               <div className="link-containercheckbox">
-                <a href="http://localhost:3000/forget_password" className="forgetpass">
-                  Forget Password?
-                </a>
+                <Link to='/forget_password'> <p> Forget Password? </p> </Link>
               </div>
             </div>
             <div className='cover_btn1_login'>
@@ -80,12 +78,7 @@ function Login() {
             </div>
           </form>
           <div className='cover_btn1_login'>
-            <Link to='/CreateUser'>
-            <p> Don’t have an account? Sign up </p>
-            </Link>
-
-            {/* <a href="http://localhost:3000/CreateUser" className="dnthave"> Don’t have an account? Sign up </a> */}
-
+            <Link to='/CreateUser'> <p> Don’t have an account? Sign up </p> </Link>
           </div>
         </div>
       </div>
