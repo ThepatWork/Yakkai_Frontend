@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/forget_password",
+        "destination": "/index.html",
+        "permanent": false
+      }
+    ]
+  }
+  
