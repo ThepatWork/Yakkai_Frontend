@@ -1,7 +1,7 @@
 {
     "redirects": [
       {
-        "source": "/:path*",
+        "source": "/photo",
         "destination": "vite.svg",
         "permanent": false
       }
