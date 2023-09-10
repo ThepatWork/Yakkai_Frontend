@@ -2,8 +2,6 @@ import '../../css/Background.css';
 import '../../css/Admin_Home.css';
 import { useNavigate } from 'react-router-dom';
 
-const url = 'http://localhost:3000';
-
 function AdminHome() {
     const navigate = useNavigate();
     return (

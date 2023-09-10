@@ -10,8 +10,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 
 import { storage } from '../WebSystem/firebase';
 
-const URL_frontend = 'http://localhost:3000';
-
 function MyProfile() {
     const navigate = useNavigate();
     Check_Token(navigate);

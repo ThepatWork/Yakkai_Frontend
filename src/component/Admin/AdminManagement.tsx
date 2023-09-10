@@ -15,7 +15,6 @@ import type { ColumnType, ColumnsType } from 'antd/es/table';
 import { listAdmins, DeleteByID } from '../WebSystem/HTTP_Request ';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 
-const url = 'http://localhost:3000'
 const Root_Email = "yakkai.th@gmail.com"
 
 function AdminManagement() {

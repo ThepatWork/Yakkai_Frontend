@@ -11,7 +11,6 @@ import { fillter_product, getProductByID, Check_Token, getUserByEmail, Every_Ema
 
 let Data_seller_out: any = {};
 let PhoneNumber_in_product: any = '';
-const url_frontend = 'http://localhost:3000'
 
 function format_Price(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

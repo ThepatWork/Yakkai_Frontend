@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { getDataWeb } from './HTTP_Request ';
 import { Link } from 'react-router-dom';
 
-const URL_front = 'http://localhost:3000';
-
 const Footer = () => {
   let blank_dataWeb = { W_NAME: "", W_ADDR: "", W_CONTACT: "", W_EMAIL: "", ABOUT_WEB: "" }
   const [dataWeb, setDataWeb] = useState<any>(blank_dataWeb);

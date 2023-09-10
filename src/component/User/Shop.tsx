@@ -9,8 +9,6 @@ import React, { useEffect, useState, } from 'react';
 import { Avatar, Card, CardContent, Grid, Pagination, Rating, Typography } from '@mui/material';
 import { Check_Token, getUserByEmail, getProductBy_EmailUser, addReview } from '../WebSystem/HTTP_Request ';
 
-const URL_frontend = 'http://localhost:3000';
-
 interface DataType {
     key: number;
     ID: number;

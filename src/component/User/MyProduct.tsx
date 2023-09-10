@@ -6,7 +6,7 @@ import type { InputRef } from 'antd';
 import { Button, Input, } from 'antd';
 import EditIcon from '@mui/icons-material/Edit';
 import { SearchOutlined } from '@ant-design/icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useRef, useState } from 'react';
 import { Space, Table, Tag, Segmented } from 'antd';
@@ -15,8 +15,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import type { ColumnType, ColumnsType } from 'antd/es/table';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 import { Check_Token, update, getProductBy_EmailUser } from '../WebSystem/HTTP_Request ';
-
-const url = 'http://localhost:3000'
 
 function format_Price(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
