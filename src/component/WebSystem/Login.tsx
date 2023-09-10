@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
+import { Link } from 'react-router-dom';
 
 function Login() {
   localStorage.clear();
@@ -79,7 +80,12 @@ function Login() {
             </div>
           </form>
           <div className='cover_btn1_login'>
-            <a href="http://localhost:3000/CreateUser" className="dnthave"> Don’t have an account? Sign up </a>
+            <Link to='/CreateUser'>
+            <p> Don’t have an account? Sign up </p>
+            </Link>
+
+            {/* <a href="http://localhost:3000/CreateUser" className="dnthave"> Don’t have an account? Sign up </a> */}
+
           </div>
         </div>
       </div>
