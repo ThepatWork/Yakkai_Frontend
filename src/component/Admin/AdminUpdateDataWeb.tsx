@@ -7,10 +7,12 @@ import '../../css/Admin_DataWeb.css';
 
 import Swal from 'sweetalert2';
 import { storage } from '../WebSystem/firebase';
+import { useNavigate } from 'react-router-dom';
 import { getDataWeb, update } from '../WebSystem/HTTP_Request ';
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 
 function DataWeb() {
+    const navigate = useNavigate();
     const [W_NAME, setW_NAME] = useState('');
     const [W_ADDR, setW_ADDR] = useState('');
     const [W_CONTACT, setW_CONTACT] = useState('');
@@ -51,7 +53,7 @@ function DataWeb() {
                 showLoaderOnConfirm: true,
             })
         } else {
-            update(new_DataWeb, 'updateDataWeb/1');
+            update(new_DataWeb, 'updateDataWeb/1',navigate);
             setTimeout(() => {
                 window.location.reload();
             }, 1000);

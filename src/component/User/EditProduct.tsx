@@ -2,13 +2,14 @@ import '../../css/Product.css';
 import '../../css/Background.css';
 import Swal from 'sweetalert2';
 import { useEffect, useState, } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,useNavigate} from 'react-router-dom';
 import { validateCreateProduct } from "../WebSystem/Validateinput";
 import { Button, MenuItem, Select } from '@mui/material';
 import { fetchCategories, getProductByID, Check_Token, update } from '../WebSystem/HTTP_Request ';
 
 function EditProduct() {
-    Check_Token();
+    const navigate = useNavigate();
+    Check_Token(navigate);
     const { id } = useParams<{ id: any }>();
     const [product, setProduct] = useState<any>({}); // ข้อมูลสินค้าที่ดึงมาจาก API
     const [categories, setCategories] = useState([]);
@@ -54,7 +55,7 @@ function EditProduct() {
 
     const handleEditSubmit = async () => {
         if (validateCreateProduct(data).isValid) {  //ผ่าน ไม่มี errors
-            update(data, 'updateProduct/' + id);
+            update(data, 'updateProduct/' + id,useNavigate);
         } else { //ตรวจพบ errors
             Swal.fire({
                 titleText: validateCreateProduct(data).messageErrors[0],

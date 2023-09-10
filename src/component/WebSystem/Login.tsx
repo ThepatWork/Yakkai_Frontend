@@ -2,12 +2,12 @@ import { useState } from 'react';
 import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
-  localStorage.clear();
-  sessionStorage.clear();
+  // localStorage.clear();
+  // sessionStorage.clear();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
@@ -27,7 +27,7 @@ function Login() {
   };
 
   const handleClick = (): void => {
-    submitLogin(data, 'Login')
+    submitLogin(data, 'Login', navigate)
   };
   return (
     <div className='backgroundLogin'>

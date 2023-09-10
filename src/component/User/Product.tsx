@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { Image, Tag, Empty } from 'antd';
 import { useEffect, useState, } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 import { fillter_product, getProductByID, Check_Token, getUserByEmail, Every_Email } from '../WebSystem/HTTP_Request ';
 
@@ -17,6 +18,7 @@ function format_Price(number: number) {
 };
 
 function Product() {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [data, setData] = useState<any>({});
     const [Data_seller, setDataSeller] = useState<any>({});
@@ -62,11 +64,12 @@ function Product() {
     };
 
     const send_data_to_Product = (data: any) => {
-        window.location.href = '/Product/' + data.ID;
+        navigate('/Product/' + data.ID);
+
     };
     function go_to_shop_page() {
         localStorage.setItem("UserEmail_for_Shop", Data_seller.U_EMAIL);
-        window.location.href = url_frontend + '/Shop';
+        navigate('/Shop');
     };
     // ส่วนของการจัดการวันเวลา
     const dateString = Data_seller.U_REGISTER;
@@ -133,7 +136,7 @@ function Product() {
 
                         <div style={{ marginTop: '100px', textAlign: 'center' }} className='btn_want_to_buy'>
                             <button className='btn_product2' onClick={Tell}>โทรหาผู้ขาย</button>
-                            <button className='btn_product1' onClick={() => need_to_buy(data)}>ให้ผู้ขายติดต่อหาคุณ</button>
+                            <button className='btn_product1' onClick={() => need_to_buy(data,navigate)}>ให้ผู้ขายติดต่อหาคุณ</button>
                             <button className='btn_product2' onClick={go_to_shop_page}>ดูสินค้าจากร้านนี้</button>
                         </div>
 
@@ -183,8 +186,9 @@ function Product() {
 export default Product;
 
 interface interface_Product { P_NAME: string, P_IMG: string, P_PRICE: number, SEND_TO: string, SUBJECT: string, CusttomerTel: string, CustomerName: string };
-async function need_to_buy(product: interface_Product) {
-    const Checked_token = await Check_Token()
+async function need_to_buy(product: interface_Product,navigate:any) {
+    // const navigate = useNavigate();
+    const Checked_token = await Check_Token(navigate)
     if (Checked_token !== false) {
         const response = await getUserByEmail({ email: localStorage.getItem('email') });
         let data = {
@@ -234,7 +238,7 @@ async function need_to_buy(product: interface_Product) {
             }
         });
     } else {
-        window.location.href = "http://localhost:3000/";
+        navigate('/');
     }
 }
 

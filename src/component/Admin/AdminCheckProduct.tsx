@@ -5,6 +5,7 @@ import '../../css/AdminCheckProduct.css';
 
 import type { InputRef } from 'antd';
 import { Button, Input, } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { CloseOutlined } from '@mui/icons-material';
 import { Space, Table, Tag, Image, Empty } from 'antd';
@@ -37,9 +38,8 @@ interface DataType {
 type DataIndex = keyof DataType;
 
 function AdminCheckProduct() {
-    Check_Token();
-
-
+    const navigate = useNavigate();
+    Check_Token(navigate);
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     const searchInput = useRef<InputRef>(null);
     const handleSearch = (_selectedKeys: string[], confirm: (param?: FilterConfirmProps) => void, _dataIndex: DataIndex,) => { confirm(); };
@@ -165,7 +165,7 @@ function AdminCheckProduct() {
             width: '60px',
             render: (_, record) => (
                 <Space size="small">
-                    <button className='btn_show' onClick={() => window.location.href = url + '/Product/' + record.ID}><VisibilityIcon /></button>
+                    <button className='btn_show' onClick={() => navigate('/Product/' + record.ID)}><VisibilityIcon /></button>
                 </Space>
             )
         },
@@ -262,7 +262,6 @@ function AdminCheckProduct() {
                     </button>
                 </div>
 
-
                 <div className='div_cover_table_and_tab'>
                     <Table
                         scroll={{ x: 1300 }}
@@ -290,7 +289,7 @@ function AdminCheckProduct() {
                             </button>
                         </div>
                         <div style={{ padding: '10px 0px', display: 'flex', justifyContent: 'center' }}>
-                            {showDataTicket(Data_ShowTicketPopup)}
+                            {showDataTicket(Data_ShowTicketPopup, navigate)}
                         </div>
 
                     </div>
@@ -303,8 +302,7 @@ function AdminCheckProduct() {
 
 export default AdminCheckProduct;
 
-
-const showDataTicket = (data: any) => {
+const showDataTicket = (data: any, navigate: any) => {
 
     const hendle_update_status = (status: any) => {
         let newData = {
@@ -312,7 +310,7 @@ const showDataTicket = (data: any) => {
             P_STATUS: status,
             SEND_EMAIL_TO: data.U_EMAIL
         }
-        update(newData, `updateProductByAdmin/` + newData.ID);
+        update(newData, `updateProductByAdmin/` + newData.ID, navigate);
     };
 
     return (

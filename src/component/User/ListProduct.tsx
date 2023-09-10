@@ -7,7 +7,7 @@ import { Grid, Card, CardContent, Typography, Pagination } from '@mui/material';
 
 const colors = ["FF8C32", "D7A86E", "A64B2A", "8E3200"];
 
-const ProductsGrid = () => {
+const ProductsGrid = (navigate:any) => {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [TotalProducts, setTotalProducts] = useState(0);
@@ -64,7 +64,7 @@ const ProductsGrid = () => {
   };
 
   const send_data_to_Product = (data: any) => {
-    window.location.href = '/Product/' + data.ID;
+    navigate('/Product/' + data.ID);
   };
   const handlePageChange = (_event: any, newPage: SetStateAction<number>) => {
     setCurrentPage(newPage);

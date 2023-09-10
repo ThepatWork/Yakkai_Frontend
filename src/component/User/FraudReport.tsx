@@ -4,12 +4,14 @@ import { Image, } from 'antd';
 import Swal from 'sweetalert2';
 import { storage } from '../WebSystem/firebase';
 import { Avatar, Rating } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 const Seller_Email = sessionStorage.getItem('User_Seller_Data_for_Report');
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 import { Check_Token, addFRAUD_REPORT, getUserByEmail } from '../WebSystem/HTTP_Request ';
 
 function FraudReport() {
+    const navigate = useNavigate();
     interface DataType_User_Seller {
         U_EMAIL: string;
         EMAIL_RW: string;
@@ -78,7 +80,7 @@ function FraudReport() {
     }, [U_REVIEWS]);
 
     const handleSubmit = (event: React.FormEvent) => {
-        Check_Token();
+        Check_Token(navigate);
         if (!data_to_backend.TITLE || !data_to_backend.INFORMATION || !data_to_backend.SELLER || !data_to_backend.EMAIL_REPORTER) {
             Swal.fire({
                 title: 'ยังมีข้อมูลจำเป็นที่คุณยังไม่กรอก',

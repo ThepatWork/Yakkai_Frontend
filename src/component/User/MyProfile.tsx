@@ -3,15 +3,18 @@ import '../../css/Profile.css';
 import '../../css/Background.css';
 import Swal from 'sweetalert2';
 import { Empty } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import React, { ChangeEvent, useEffect, useRef, useState, } from 'react';
 import { Check_Token, getUserByEmail, update } from '../WebSystem/HTTP_Request ';
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
+
 import { storage } from '../WebSystem/firebase';
 
 const URL_frontend = 'http://localhost:3000';
 
 function MyProfile() {
-    Check_Token();
+    const navigate = useNavigate();
+    Check_Token(navigate);
     const Email_User = localStorage.getItem('email');
     const [CheckEdit_btn, setCheckEdit_btn] = useState(false);
     const [User_ID, setUser_ID] = useState(0);
@@ -76,18 +79,18 @@ function MyProfile() {
                     data.U_IMG = old_IMG;
                     setCheckEdit_btn(false)
                     setSelectedImages([]);
-                    update(data, 'updateUser/' + User_ID);
+                    update(data, 'updateUser/' + User_ID, navigate);
                 }
             })
         } else {
             setCheckEdit_btn(false);
             console.log(data);
-            update(data, 'updateUser/' + User_ID);
+            update(data, 'updateUser/' + User_ID, navigate);
         }
     }
 
     const sendmail_for_resetPassword = () => {
-        window.open(URL_frontend+'/ChangePassword');
+        navigate('/ChangePassword');
     }
     //------------------------------------------------------------------------------------------------------------------------------------------
     const onFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -231,7 +234,7 @@ function MyProfile() {
                             <input type='string' className='ThepatforInput_Profile' placeholder='Email'
                                 value={email} onChange={(event) => setEmail(event.target.value)}
                                 disabled
-                                style={{backgroundColor:'#00000045',color:'#fff',textAlign:'center'}}
+                                style={{ backgroundColor: '#00000045', color: '#fff', textAlign: 'center' }}
                             />
                         </div>
 

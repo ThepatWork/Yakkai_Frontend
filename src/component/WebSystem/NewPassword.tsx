@@ -6,9 +6,11 @@ import jwt_decode from 'jwt-decode';
 import {update } from './HTTP_Request ';
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2' // Alert text --> npm install sweetalert2
+import { useNavigate } from 'react-router-dom';
 
 // reset รหัสผ่าน เมื่อจำรหัสผ่านไม่ได้ (กรณีที่ยังไม่ได้เข้าสู่ระบบ --> ส่งไปยัง email)
 export const ResetPasswordPage: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const token: any = new URLSearchParams(location.search).get('token');
   const decoded: any = jwt_decode(token);
@@ -30,7 +32,7 @@ export const ResetPasswordPage: React.FC = () => {
       });
       return;
     }
-    update(data, 'resetPass');
+    update(data, 'resetPass',navigate);
     setNewPassword('');
     setConfirmPassword('');
   };
@@ -76,6 +78,8 @@ export const ResetPasswordPage: React.FC = () => {
 
 // reset รหัสผ่าน เมื่อสามารถเข้าสู่ระบบได้
 export const ResetPasswordPage_canLogin: React.FC = () => {
+  const navigate = useNavigate();
+
   const email = localStorage.getItem('email');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -93,7 +97,7 @@ export const ResetPasswordPage_canLogin: React.FC = () => {
       });
       return;
     }
-    update(data, 'resetPass');
+    update(data, 'resetPass',navigate);
     setNewPassword('');
     setConfirmPassword('');
   };

@@ -6,6 +6,7 @@ import type { InputRef } from 'antd';
 import { Button, Input, } from 'antd';
 import EditIcon from '@mui/icons-material/Edit';
 import { SearchOutlined } from '@ant-design/icons';
+import { Link, useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useRef, useState } from 'react';
 import { Space, Table, Tag, Segmented } from 'antd';
@@ -22,7 +23,8 @@ function format_Price(number: number) {
 }
 
 function MyProduct() {
-    Check_Token();
+    const navigate = useNavigate();
+    Check_Token(navigate);
     interface DataType {
         key: number;
         ID: number;
@@ -143,7 +145,7 @@ function MyProduct() {
                 ) : record.P_STATUS === "ยกเลิกประกาศขาย" ? (
                     <Tag className='TP_font' color="red" > 🔴 {record.P_STATUS} </Tag>
                 ) : (<Tag className='TP_font' color="purple" >  {record.P_STATUS} </Tag>)
-            )            
+            )
         },
         {
             title: '',
@@ -151,7 +153,7 @@ function MyProduct() {
             render: (_, record) => (
                 record.P_STATUS === "กำลังประกาศขาย" ? (
                     <Space size="small" style={{ textAlign: 'center' }}>
-                        <button className='btn_show' onClick={() => window.location.href = url + '/Product/' + record.ID}><VisibilityIcon /></button>
+                        <button className='btn_show' onClick={() => navigate('/Product/' + record.ID)}><VisibilityIcon /></button>
                         <button
                             className='btn_delete'
                             onClick={async () => {
@@ -164,7 +166,7 @@ function MyProduct() {
                                     cancelButtonColor: '#d33',
                                 }).then(async (result) => {
                                     if (result.isConfirmed) {
-                                        await update({ 'P_STATUS': 'ยกเลิกประกาศขาย' }, 'updateProduct/' + record.ID);
+                                        await update({ 'P_STATUS': 'ยกเลิกประกาศขาย' }, 'updateProduct/' + record.ID, navigate);
                                         const updatedProducts = products.filter(item => item.ID !== record.ID);
                                         setProducts(updatedProducts);
                                         Listdata();
@@ -182,8 +184,8 @@ function MyProduct() {
                     </Space>
                 ) : record.P_STATUS === "รอตรวจสอบ" ? (
                     <Space size="small">
-                        <button className='btn_show' onClick={() => window.location.href = url + '/Product/' + record.ID}><VisibilityIcon /></button>
-                        <button className='btn_edit_table' onClick={() => window.location.href = url + '/EditProduct/' + record.ID}><EditIcon /></button>
+                        <button className='btn_show' onClick={() => navigate('/Product/' + record.ID)}><VisibilityIcon /></button>
+                        <button className='btn_edit_table' onClick={() => navigate('/EditProduct/' + record.ID)}><EditIcon /></button>
                         <button
                             className='btn_delete'
                             onClick={async () => {
@@ -196,7 +198,7 @@ function MyProduct() {
                                     cancelButtonColor: '#d33',
                                 }).then(async (result) => {
                                     if (result.isConfirmed) {
-                                        await update({ 'P_STATUS': 'ยกเลิกประกาศขาย' }, 'updateProduct/' + record.ID);
+                                        await update({ 'P_STATUS': 'ยกเลิกประกาศขาย' }, 'updateProduct/' + record.ID, navigate);
                                         const updatedProducts = products.filter(item => item.ID !== record.ID);
                                         setProducts(updatedProducts);
                                         Listdata();
@@ -209,7 +211,7 @@ function MyProduct() {
                     </Space >
                 ) : (
                     <Space size="small">
-                        <button className='btn_show' onClick={() => window.location.href = url + '/Product/' + record.ID}><VisibilityIcon /></button>
+                        <button className='btn_show' onClick={() => navigate('/Product/' + record.ID)}><VisibilityIcon /></button>
                     </Space>
                 )
             ),
@@ -225,7 +227,7 @@ function MyProduct() {
             P_ADS: data.P_ADS
         }
         localStorage.setItem('DataProduct_Ads', JSON.stringify(newData));
-        window.location.href = url + '/Advert';
+        navigate('/Advert');
     }
     const [products, setProducts] = useState<DataType[]>([]);
     const [selectedTab, setSelectedTab] = useState<string>('รายการที่กำลังประกาศขาย');

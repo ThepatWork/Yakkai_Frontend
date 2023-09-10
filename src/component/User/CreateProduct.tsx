@@ -2,15 +2,17 @@ import '../../css/Product.css';
 import '../../css/Background.css';
 import { Image } from 'antd';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 import { storage } from '../WebSystem/firebase';
-import { validateCreateProduct } from "../WebSystem/Validateinput";
 import { Button, MenuItem, Select } from '@mui/material';
 import { ChangeEvent, useRef,useEffect, useState, } from 'react';
+import { validateCreateProduct } from "../WebSystem/Validateinput";
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 import { submit, fetchCategories, Check_Token } from '../WebSystem/HTTP_Request ';
 
 function CreateProduct() {
-    Check_Token();
+    const navigate = useNavigate();
+    Check_Token(navigate);
     const Email_User = localStorage.getItem('email');
     const [categories, setCategories] = useState([]);
     const [type, settype] = useState("");

@@ -1,6 +1,7 @@
 import '../../css/footer.css'
 import { useEffect, useState } from 'react';
 import { getDataWeb } from './HTTP_Request ';
+import { Link } from 'react-router-dom';
 
 const URL_front = 'http://localhost:3000';
 
@@ -42,7 +43,7 @@ const Footer = () => {
         </div>
 
         <div className='cover_content_footer'>
-          <a href={URL_front + '/PrivacyPolicy'} ><h3 style={{ margin: '20px 0 0 0' }}> * นโยบายความเป็นส่วนตัว </h3> </a>
+          <Link to='/PrivacyPolicy'> <h3 style={{ margin: '20px 0 0 0' }}> * นโยบายความเป็นส่วนตัว </h3> </Link>
           <a href='https://tinyurl.com/4dsc4h4t'><h3> * เครดิตการใช้รูปภาพ </h3> </a>
         </div>
 

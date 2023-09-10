@@ -2,10 +2,13 @@ import '../../css/Background.css';
 import { Carousel } from 'antd';
 import ProductsGrid from './ListProduct';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { listData } from "../WebSystem/HTTP_Request ";
 import { Player } from '@lottiefiles/react-lottie-player';
 
+
 function Home() {
+    const navigate = useNavigate();
     const [IMG_Banner, setIMG_Banner] = useState([]);
     const [IMG_Side_Banner, setIMG_Side_Banner] = useState([]);
 
@@ -37,7 +40,7 @@ function Home() {
                 </div>
 
                 <div>
-                    <ProductsGrid />
+                    {ProductsGrid(navigate)}
                 </div>
                 
                 <div className="BannerSide">
