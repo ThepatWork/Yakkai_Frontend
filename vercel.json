@@ -2,7 +2,7 @@
     "redirects": [
       {
         "source": "/forget_password",
-        "destination": "/src/App.tsx",
+        "destination": "/:path*",
         "permanent": false
       }
     ]
