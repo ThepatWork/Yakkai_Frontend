@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
-    host: '0.0.0.0', // ใช้ '0.0.0.0' เพื่อให้เปิดใช้งานการเข้าถึงจาก Network
+    // port: 3000,
+    // host: '0.0.0.0', // ใช้ '0.0.0.0' เพื่อให้เปิดใช้งานการเข้าถึงจาก Network
   },
 })
