@@ -3,6 +3,8 @@ import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
 
+const PortFrontend = 'https://yakkai.vercel.app'
+
 function Login() {
   localStorage.clear();
   sessionStorage.clear();
@@ -69,7 +71,7 @@ function Login() {
               </div>
               <div className="text-containercheckbox" style={{ marginLeft: '10px', color: '#333' }}>แสดงรหัสผ่าน</div>
               <div className="link-containercheckbox">
-                <a href="http://localhost:3000/forget_password" className="forgetpass">
+                <a href={PortFrontend + "forget_password"} className="forgetpass">
                   Forget Password?
                 </a>
               </div>
@@ -79,7 +81,7 @@ function Login() {
             </div>
           </form>
           <div className='cover_btn1_login'>
-            <a href="http://localhost:3000/CreateUser" className="dnthave"> Don’t have an account? Sign up </a>
+            <a href={PortFrontend + "CreateUser"} className="dnthave"> Don’t have an account? Sign up </a>
           </div>
         </div>
       </div>
