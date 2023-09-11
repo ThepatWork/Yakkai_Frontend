@@ -2,13 +2,13 @@ import '../../css/Product.css';
 import '../../css/Background.css';
 import { Tag } from 'antd';
 import moment from 'moment';
-import { useNavigate } from 'react-router-dom';
 import { deepOrange } from '@mui/material/colors';
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useEffect, useState, } from 'react';
 import { Avatar, Card, CardContent, Grid, Pagination, Rating, Typography } from '@mui/material';
 import { Check_Token, getUserByEmail, getProductBy_EmailUser, addReview } from '../WebSystem/HTTP_Request ';
 
+const URL_frontend = 'http://localhost:3000';
 interface DataType {
     key: number;
     ID: number;
@@ -30,7 +30,6 @@ function formatNumber(number: number) {
 }
 
 function Shop() {
-    const navigate = useNavigate();
     const userEmail = localStorage.getItem('UserEmail_for_Shop');
     const [products, setProducts] = useState<DataType[]>([]);
     const [userRating, setUserRating] = useState(0);
@@ -64,7 +63,7 @@ function Shop() {
     }
     //----------------------------------------------------------------
     const send_data_to_Product = (data: any) => {
-        navigate('/Product/' + data.ID);
+        window.location.href = '/Product/' + data.ID;
     };
     useEffect(() => {
         fetchUser();
@@ -120,7 +119,7 @@ function Shop() {
         setShowPopup(!showPopup);
     };
     const openPopup = async () => {
-        await Check_Token(navigate);
+        await Check_Token();
         setShowPopup(true);
     };
 
@@ -147,7 +146,7 @@ function Shop() {
     const fraud_repoet = () => {
         if (userEmail) {
             sessionStorage.setItem('User_Seller_Data_for_Report', userEmail);
-            navigate('/FraudReport');
+            window.location.href = URL_frontend + '/FraudReport';
         }
     }
     return (

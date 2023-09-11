@@ -2,12 +2,10 @@ import { useState } from 'react';
 import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
-import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
-  // localStorage.clear();
-  // sessionStorage.clear();
-  const navigate = useNavigate();
+  localStorage.clear();
+  sessionStorage.clear();
   const [showPassword, setShowPassword] = useState(false);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
@@ -27,7 +25,7 @@ function Login() {
   };
 
   const handleClick = (): void => {
-    submitLogin(data, 'Login', navigate)
+    submitLogin(data, 'Login')
   };
   return (
     <div className='backgroundLogin'>
@@ -71,7 +69,9 @@ function Login() {
               </div>
               <div className="text-containercheckbox" style={{ marginLeft: '10px', color: '#333' }}>แสดงรหัสผ่าน</div>
               <div className="link-containercheckbox">
-                <Link to='/forget_password'> <p> Forget Password? </p> </Link>
+                <a href="http://localhost:3000/forget_password" className="forgetpass">
+                  Forget Password?
+                </a>
               </div>
             </div>
             <div className='cover_btn1_login'>
@@ -79,7 +79,7 @@ function Login() {
             </div>
           </form>
           <div className='cover_btn1_login'>
-            <Link to='/CreateUser'> <p> Don’t have an account? Sign up </p> </Link>
+            <a href="http://localhost:3000/CreateUser" className="dnthave"> Don’t have an account? Sign up </a>
           </div>
         </div>
       </div>

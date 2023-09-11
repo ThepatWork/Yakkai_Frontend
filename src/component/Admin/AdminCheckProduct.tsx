@@ -5,7 +5,6 @@ import '../../css/AdminCheckProduct.css';
 
 import type { InputRef } from 'antd';
 import { Button, Input, } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { CloseOutlined } from '@mui/icons-material';
 import { Space, Table, Tag, Image, Empty } from 'antd';
@@ -13,6 +12,8 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import type { ColumnType, ColumnsType } from 'antd/es/table';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 import { Check_Token, update, listProduct } from '../WebSystem/HTTP_Request ';
+
+const url = 'http://localhost:3000'
 
 function format_Price(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -36,8 +37,9 @@ interface DataType {
 type DataIndex = keyof DataType;
 
 function AdminCheckProduct() {
-    const navigate = useNavigate();
-    Check_Token(navigate);
+    Check_Token();
+
+
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     const searchInput = useRef<InputRef>(null);
     const handleSearch = (_selectedKeys: string[], confirm: (param?: FilterConfirmProps) => void, _dataIndex: DataIndex,) => { confirm(); };
@@ -163,7 +165,7 @@ function AdminCheckProduct() {
             width: '60px',
             render: (_, record) => (
                 <Space size="small">
-                    <button className='btn_show' onClick={() => navigate('/Product/' + record.ID)}><VisibilityIcon /></button>
+                    <button className='btn_show' onClick={() => window.location.href = url + '/Product/' + record.ID}><VisibilityIcon /></button>
                 </Space>
             )
         },
@@ -260,6 +262,7 @@ function AdminCheckProduct() {
                     </button>
                 </div>
 
+
                 <div className='div_cover_table_and_tab'>
                     <Table
                         scroll={{ x: 1300 }}
@@ -287,7 +290,7 @@ function AdminCheckProduct() {
                             </button>
                         </div>
                         <div style={{ padding: '10px 0px', display: 'flex', justifyContent: 'center' }}>
-                            {showDataTicket(Data_ShowTicketPopup, navigate)}
+                            {showDataTicket(Data_ShowTicketPopup)}
                         </div>
 
                     </div>
@@ -300,7 +303,8 @@ function AdminCheckProduct() {
 
 export default AdminCheckProduct;
 
-const showDataTicket = (data: any, navigate: any) => {
+
+const showDataTicket = (data: any) => {
 
     const hendle_update_status = (status: any) => {
         let newData = {
@@ -308,7 +312,7 @@ const showDataTicket = (data: any, navigate: any) => {
             P_STATUS: status,
             SEND_EMAIL_TO: data.U_EMAIL
         }
-        update(newData, `updateProductByAdmin/` + newData.ID, navigate);
+        update(newData, `updateProductByAdmin/` + newData.ID);
     };
 
     return (

@@ -3,7 +3,6 @@ import '../../css/Profile.css';
 import '../../css/Background.css';
 import Swal from 'sweetalert2';
 import { Empty, Image, Tag } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { storage } from '../WebSystem/firebase';
 import { Card, CardContent, Typography } from '@mui/material';
 import { ChangeEvent, useEffect, useRef, useState, } from 'react';
@@ -29,7 +28,6 @@ if (product_Str) {
     product = JSON.parse(product_Str);
 }
 function Advert() {
-    const navigate = useNavigate();
     //----------------------------------------- เกี่ยวกับการเช็คโฆษณา -------------------------------------------------------
     interface dataAdsType { ID: Number; P_ID: Number; Ad_CREATE_BILL: string; Ad_IMG: string; Ad_CHECKED: boolean; }
     const [dataAdsStatus, setDataAdsStatus] = useState<dataAdsType>({ ID: 0, P_ID: 0, Ad_CREATE_BILL: '', Ad_IMG: '', Ad_CHECKED: false, });
@@ -137,7 +135,7 @@ function Advert() {
                     marginTop: '10px'
                 }}
             >
-                {cardProductAds(navigate)}
+                {cardProductAds()}
             </div>
             <div style={{ height: '100%', width: '90%', backgroundColor: '#ffffff89', marginTop: '10px' }} className='contentPage'>
                 <div style={{ backgroundColor: '#DAC0A3', padding: '5px', marginTop: '10px' }}>
@@ -219,10 +217,9 @@ function Advert() {
 }
 export default Advert;
 
-function cardProductAds(navigate:any) {
-    
+function cardProductAds() {
     const send_data_to_Product = (data: any) => {
-        navigate('/Product/' + data.ID);
+        window.location.href = '/Product/' + data.ID;
     };
 
     function format_Price(number: number) {

@@ -1,13 +1,11 @@
 import '../../css/Background.css'
 import Swal from 'sweetalert2'
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { validateForm } from "../WebSystem/Validateinput";
 import { TP_VerifyEmail } from "../WebSystem/HTTP_Request ";
 import { Grid, FormControl, Button, Box } from '@mui/material';
 
 const CreateUser = () => {
-  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [gender, setGender] = useState('');
@@ -35,7 +33,7 @@ const CreateUser = () => {
     }
 
     if (validateForm(data).isValid) {  //ผ่าน ไม่มี errors
-      TP_VerifyEmail(data, 'User_Verify_Email',navigate);
+      TP_VerifyEmail(data, 'User_Verify_Email');
     } else { //ตรวจพบ errors
       Swal.fire({
         titleText: validateForm(data).messageErrors[0],

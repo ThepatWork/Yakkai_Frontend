@@ -7,7 +7,6 @@ import { Space, Table } from 'antd';
 import type { InputRef } from 'antd';
 import { Button, Input, } from 'antd';
 import CreateAdmin from '../Admin/CreateAdmin'
-import { useNavigate } from 'react-router-dom';
 import EditIcon from '@mui/icons-material/Edit';
 import { SearchOutlined } from '@ant-design/icons';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -15,11 +14,11 @@ import type { ColumnType, ColumnsType } from 'antd/es/table';
 import { listAdmins, DeleteByID } from '../WebSystem/HTTP_Request ';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 
+const url = 'http://localhost:3000'
 const Root_Email = "yakkai.th@gmail.com"
 
 function AdminManagement() {
     // Check_Token();
-    const navigate = useNavigate();
     interface DataType {
         key: number,
         ID: number,
@@ -112,7 +111,7 @@ function AdminManagement() {
                 localStorage.getItem('email') === Root_Email ? (
                     record.U_EMAIL === localStorage.getItem("email") ? (
                         <Space size="small" style={{ textAlign: 'center' }}>
-                            <button className='btn_edit_table' onClick={() => navigate('/MyProfile')}><EditIcon /></button>
+                            <button className='btn_edit_table' onClick={() => window.location.href = url + '/MyProfile'}><EditIcon /></button>
                         </Space>
                     ) : (
                         <Space size="small" style={{ textAlign: 'center' }}>
@@ -122,7 +121,7 @@ function AdminManagement() {
                 ) : (
                     record.U_EMAIL === localStorage.getItem("email") ? (
                         <Space size="small" style={{ textAlign: 'center' }}>
-                            <button className='btn_edit_table' onClick={() => navigate('/MyProfile')}><EditIcon /></button>
+                            <button className='btn_edit_table' onClick={() => window.location.href = url + '/MyProfile'}><EditIcon /></button>
                         </Space>
                     ) : (
                         <Space size="small">

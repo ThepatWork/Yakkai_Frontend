@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import jwt_decode from 'jwt-decode';
 
 const PortBackend = 'https://backend-yakkai.onrender.com';
+const PortFrontend = 'https://yakkai.vercel.app'
 
 //==============================================================================================================================================================================================================
 export const submit = (data: any, part: string) => {
@@ -61,6 +62,7 @@ export const submit = (data: any, part: string) => {
 };
 //==============================================================================================================================================================================================================
 export const sendEmaiChangePassword = (email: any) => {
+
   let timerInterval: number
   Swal.fire({
     title: 'ระบบกำลังส่ง email',
@@ -160,7 +162,7 @@ export const Every_Email = (dataInput: {}) => {
     });
 };
 //======================================================== Update  Data  ==========================================================================================================================================
-export const update = (data: any, part: string, navigate: any) => {
+export const update = (data: any, part: string) => {
   const apiUrl = `${PortBackend}/${part}`;
   let timerInterval: number
 
@@ -181,9 +183,9 @@ export const update = (data: any, part: string, navigate: any) => {
             },
             willClose: () => {
               clearInterval(timerInterval)
-              // localStorage.clear();
-              // sessionStorage.clear();
-              navigate('/Login');
+              localStorage.clear();
+              sessionStorage.clear();
+              window.location.href = PortFrontend;
             }
           })
         } else {
@@ -224,7 +226,7 @@ export const update = (data: any, part: string, navigate: any) => {
     });
 };
 //==============================================================================================================================================================================================================
-export const Check_Token = async (navigate:any) => {
+export const Check_Token = async () => {
   const Token = localStorage.getItem('token');
   const apiUrl = `${PortBackend}/Check_Token`;
   try {
@@ -240,14 +242,14 @@ export const Check_Token = async (navigate:any) => {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
     localStorage.removeItem('role');
-    navigate('/Login');
+    window.location.href = PortFrontend;
     return false;
   }
 };
 
 //==============================================================================================================================================================================================================
 // ฟังก์ชันสำหรับอ่านข้อมูลจาก token และคืนค่าเป็น object ของข้อมูล
-export const submitLogin = (data: any, part: string, navigate:any) => {
+export const submitLogin = (data: any, part: string) => {
   const apiUrl = `${PortBackend}/${part}`;
   axios
     .post(apiUrl, data)
@@ -269,8 +271,7 @@ export const submitLogin = (data: any, part: string, navigate:any) => {
           showConfirmButton: false,
           timer: 1500,
         }).then(() => {
-          navigate('/'); // เมื่อหมดเวลา 1 วินาที จะเปลี่ยนหน้าไปที่ Home
-          // window.location.reload(); // เมื่อหมดเวลา 1 วินาที จะเปลี่ยนหน้าไปที่ Home
+          window.location.href = PortFrontend; // เมื่อหมดเวลา 1 วินาที จะเปลี่ยนหน้าไปที่ Home
         });
       }
     })
@@ -300,7 +301,7 @@ export const submitLogin = (data: any, part: string, navigate:any) => {
     });
 };
 //==============================================================================================================================================================================================================
-export const TP_VerifyEmail = (data: any, part: string, navigate:any) => {
+export const TP_VerifyEmail = (data: any, part: string) => {
   const apiUrl = `${PortBackend}/${part}`;
 
   axios
@@ -357,9 +358,9 @@ export const TP_VerifyEmail = (data: any, part: string, navigate:any) => {
               confirmButtonText: 'ไปยังหน้า Login',
             }).then((result) => {
               if (result.isConfirmed) {
-                 navigate('/Login');
+                window.location.href = PortFrontend;
               }
-              setTimeout(() => {navigate('/Login'); }, 1500);
+              setTimeout(() => { window.location.href = PortFrontend; }, 1500);
             });
 
           }

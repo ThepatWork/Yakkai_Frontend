@@ -4,11 +4,9 @@ import '../../css/checkbox.css';
 
 import Swal from 'sweetalert2';
 import { sendEmaiChangePassword, getUserByEmail } from './HTTP_Request ';
-import { useNavigate } from 'react-router-dom';
 
 function ForgetPassword() {
     const [email, setEmail] = useState('');
-    const navigate = useNavigate();
     const handleSubmit = async () => {
         const check_user: [] = await getUserByEmail({ email: email });
         if (!/\S+@\S+\.\S+/.test(email)) {
@@ -28,7 +26,7 @@ function ForgetPassword() {
                     cancelButtonText: 'ตรวจสอบ Email อีกครั้ง',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        navigate('/CreateUser');
+                        window.location.href = "/CreateUser"
                     }
                 })
 

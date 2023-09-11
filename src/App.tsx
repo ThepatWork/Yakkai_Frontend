@@ -29,15 +29,14 @@ import AdminCheckProduct from "./component/Admin/AdminCheckProduct.tsx"
 import CheckFraudReport from "./component/Admin/AdminCheckFraudReport.tsx"
 
 function App() {
-
   const role: string | null = localStorage.getItem('role'); // ควนรจาก LS
   return (
     <>
-      <BrowserRouter>
       <NavBar />
+      <BrowserRouter>
         <Routes>
           {role !== 'User' && role !== 'Admin' && (
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
           )}
           {role === 'User' && (
             <>
@@ -61,7 +60,6 @@ function App() {
           )}
 
           <Route path="/" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
           <Route path="/EditProduct/:id" element={<EditProduct />} />
           <Route path="/FraudReport" element={<FraudReport />} />
           <Route path="/Shop" element={<Shop />} />
@@ -75,8 +73,8 @@ function App() {
           <Route path="/MyProduct" element={<MyProduct />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         </Routes>
-      <Footer />
       </BrowserRouter>
+      <Footer />
     </>
   )
 }

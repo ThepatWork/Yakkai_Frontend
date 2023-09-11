@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import '../../css/checkbox.css';
 import '../../css/MyProduct.css';
 import '../../css/Admin_Home.css';
@@ -6,7 +7,6 @@ import '../../css/AdminManageTable.css';
 
 import Swal from 'sweetalert2';
 import { Space, Table, Image } from 'antd';
-import { useEffect, useState } from 'react';
 import AdminSideBanner from './AdminSideBanner';
 import type { ColumnsType } from 'antd/es/table';
 import { DeleteOutlined } from '@mui/icons-material';
@@ -59,6 +59,7 @@ function AdminTopBanner() {
             align: 'center',
             dataIndex: 'TB_LINK',
             key: 'TB_LINK',
+
         },
         {
             title: <>

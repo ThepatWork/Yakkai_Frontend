@@ -5,7 +5,6 @@ import '../../css/AdminCheckProduct.css';
 
 import Swal from 'sweetalert2';
 import type { InputRef } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { Space, Table, Tag, Image } from 'antd';
 import { Button, Input, Segmented, } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
@@ -24,7 +23,6 @@ interface DataType {
 type DataIndex = keyof DataType;
 
 function AdminCheckAds() {
-    const navigate = useNavigate()
     // Check_Token(); //admin ไม่จำเป็นจะต้องตรวจสอบก็ได้
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     const searchInput = useRef<InputRef>(null);
@@ -128,7 +126,7 @@ function AdminCheckAds() {
     ];
     const btn_action = (action: Boolean, id: number) => {
         if (action === true) {
-            update({ Ad_CHECKED: true }, 'updateAdvert/' + id,navigate)
+            update({ Ad_CHECKED: true }, 'updateAdvert/' + id)
             setTimeout(() => {
                 window.location.reload();
             }, 1000);
