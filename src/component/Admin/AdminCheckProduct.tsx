@@ -13,7 +13,7 @@ import type { ColumnType, ColumnsType } from 'antd/es/table';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 import { Check_Token, update, listProduct } from '../WebSystem/HTTP_Request ';
 
-const PortFrontend = 'https://yakkai.vercel.app'
+const PortFrontend = import.meta.env.VITE_URL_FRONTEND
 
 function format_Price(number: number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

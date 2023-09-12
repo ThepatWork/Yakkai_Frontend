@@ -1,7 +1,7 @@
 import '../../css/Background.css';
 import '../../css/Admin_Home.css';
 
-const PortFrontend = 'https://yakkai.vercel.app'
+const PortFrontend = import.meta.env.VITE_URL_FRONTEND
 
 function AdminHome() {
     return (

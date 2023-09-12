@@ -8,7 +8,7 @@ import { Check_Token, getUserByEmail, update } from '../WebSystem/HTTP_Request '
 import { ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
 import { storage } from '../WebSystem/firebase';
 
-const PortFrontend = 'https://yakkai.vercel.app'
+const PortFrontend = import.meta.env.VITE_URL_FRONTEND
 
 function MyProfile() {
     Check_Token();

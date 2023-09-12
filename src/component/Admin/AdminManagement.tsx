@@ -14,7 +14,7 @@ import type { ColumnType, ColumnsType } from 'antd/es/table';
 import { listAdmins, DeleteByID } from '../WebSystem/HTTP_Request ';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 
-const PortFrontend = 'https://yakkai.vercel.app'
+const PortFrontend = import.meta.env.VITE_URL_FRONTEND
 const Root_Email = "yakkai.th@gmail.com"
 
 function AdminManagement() {
