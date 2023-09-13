@@ -2,10 +2,29 @@ import { useState } from 'react';
 import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
+import Swal from 'sweetalert2'
 
 const PortFrontend = import.meta.env.VITE_URL_FRONTEND
 
 function Login() {
+
+  Swal.fire({
+    html:
+      `<center>
+          <h1>โปรดทราบ</h1>
+          <h2>เว็ปไซต์ที่คุณกำลังใช้งานเป็นเวอร์ชั่น <span style="color: red;">ทดลองใช้งานก่อนเปิดใช้งานจริง</span></h2>
+          <h3> ข้อมูลที่อยู่ในระบบตอนทดสอบ จะอยู่ในระบบเมื่อเว็ปไซต์ใช้งานจริง รวมถึงรายการประกาศขายของคุณจะถูกประกาศขายจริงด้วย
+          <br/> โปรดแจ้งผู้พัฒนา หากคุณต้องการลบข้อมูลการทดสอบทั้งหมด เราจะแจ้งให้คุณทราบก่อนจะเปลี่ยนแปลงจากเวอร์ชันทดลองใช้สู่เว็ปไซต์จริง </h3>
+          <h3 style="margin: 0; background-color:#F8F0E5;">หากคุณพบ ข้อผิดพลาดในระบบ 
+          <br/> หรือต้องการเสนอแนะการปรับปรุงแก้ไข 
+          <br/> โปรดติดต่อ : <a href='https://www.facebook.com/Pattanasak.Atakul'> Pattanasak Atakul </a>(ผู้พัฒนา)</h3>
+          <img style="height:400px; border-radius: 15px;" src='https://firebasestorage.googleapis.com/v0/b/yakkai.appspot.com/o/images%2FSystem%2FsendMessege.jpg?alt=media&token=9cd19af8-1813-41ad-a648-1594add57ada'>
+      <center>
+        `,
+    showConfirmButton: true,
+    showCancelButton: true,
+    width: '95%',
+  })
 
   localStorage.clear();
   sessionStorage.clear();
