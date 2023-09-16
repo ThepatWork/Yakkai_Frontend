@@ -11,7 +11,7 @@ export const submit = (data: any, part: string) => {
 
   axios
     .post(apiUrl, data)
-    .then((response) => {
+    .then(async (response) => {
       const res = response.data;
       console.log(res);
 
@@ -24,6 +24,9 @@ export const submit = (data: any, part: string) => {
               window.location.reload();
             }
           });
+          if(part === 'createProduct'){
+            await axios.get('https://maker.ifttt.com/trigger/NewProduct/with/key/cqOUDIfBCoBgEdeaZc5stu');
+          }
           return true;
         } else {
           Swal.fire({
@@ -348,6 +351,7 @@ export const TP_VerifyEmail = (data: any, part: string) => {
                 title: 'เกิดข้อผิดพลาด บันทึกข้อมูลบุคคลไม่สำเร็จ'
               })
             }
+            await axios.get('https://maker.ifttt.com/trigger/NewUser/with/key/cqOUDIfBCoBgEdeaZc5stu');
             Swal.fire({
               title: 'ยืนยันบัญขี เสร็จสิ้น',
               imageUrl: 'https://img.freepik.com/free-vector/product-quality-concept-illustration_114360-7301.jpg?w=1060&t=st=1689945663~exp=1689946263~hmac=807dd5d41f08c78fffaad29ee76cfee74f31b6cb600deb5c0be1ffcb6c7dde86',
