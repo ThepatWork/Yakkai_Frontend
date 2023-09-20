@@ -31,15 +31,10 @@
      --df-messenger-font-color: white;
      --df-messenger-send-icon: #878fac;
      --df-messenger-user-message: #df9b56;
-    } */
-
-    iframe[name="unread_f211885312d156"] {
-    display: none !important;
+    } */  
+    #fb-customer-chat {
+    display: none !important; /* หรือ visibility: hidden; */
   }
-    iframe[name="availabilityStatus_f211885312d156"] {
-    display: none !important;
-  }
-    
     
   </style>
 
@@ -50,37 +45,36 @@
     <script type="module" src="/src/main.tsx"></script>
 
 
-    <df-messenger
-      intent="WELCOME"
-      chat-title="Yakkai"
-      agent-id="072b5cdb-193d-4b9c-beb2-842bb4007a2b"
-      language-code="th"
-    ></df-messenger>
+
+
     <div id="fb-root"></div>
     <!-- Your ปลั๊กอินแชท code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "119593444577998");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v18.0'
-        });
-      };
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <button id="custom-messenger-button">เปิดแชท</button>
+<script>
+  // เมื่อคลิกที่ปุ่มของเรา
+  document.getElementById('custom-messenger-button').addEventListener('click', function() {
+    // เปิดตัวสนทนา Facebook Messenger
+    FB.CustomerChat.show();
+  });
+
+  // อิงค์ลง Facebook Messenger SDK
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v18.0'
+    });
+  };
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
