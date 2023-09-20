@@ -16,68 +16,9 @@
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-
   </head>
-
-
-  <style>
-    /* df-messenger {
-      height: 300px !important;
-     --df-messenger-bot-message: #ec630e;
-     --df-messenger-button-titlebar-color: #df9b56;
-     --df-messenger-chat-background-color: #fcecd6;
-     --df-messenger-font-color: white;
-     --df-messenger-send-icon: #878fac;
-     --df-messenger-user-message: #df9b56;
-    } */  
-    #fb-customer-chat {
-    display: none !important; /* หรือ visibility: hidden; */
-  }
-    
-  </style>
-
-
-  
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-
-
-
-    <div id="fb-root"></div>
-    <!-- Your ปลั๊กอินแชท code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-    <button id="custom-messenger-button">เปิดแชท</button>
-<script>
-  // เมื่อคลิกที่ปุ่มของเรา
-  document.getElementById('custom-messenger-button').addEventListener('click', function() {
-    // เปิดตัวสนทนา Facebook Messenger
-    FB.CustomerChat.show();
-  });
-
-  // อิงค์ลง Facebook Messenger SDK
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml: true,
-      version: 'v18.0'
-    });
-  };
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
-
-
-
   </body>
 </html>
