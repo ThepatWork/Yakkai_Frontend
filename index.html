@@ -18,24 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-
-
-
+  <!-- This script for facebook messenger -->
   <body>
-  <!-- Messenger ปลั๊กอินแชท Code -->
   <div id="fb-root"></div>
-
-  <!-- Your ปลั๊กอินแชท code -->
   <div id="fb-customer-chat" class="fb-customerchat">
   </div>
-
   <script>
     var chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "119593444577998");
     chatbox.setAttribute("attribution", "biz_inbox");
   </script>
-
-  <!-- Your SDK code -->
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -43,7 +35,6 @@
         version          : 'v18.0'
       });
     };
-
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -53,11 +44,8 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
   </body>
-
-
-
-
-
+  
+  <!-- This script for main program -->
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
