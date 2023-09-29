@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../../css/Login.css';
 import '../../css/checkbox.css';
 import { submitLogin } from "./HTTP_Request ";
@@ -12,11 +12,11 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
-  const [checked, setChecked] = useState(true);
+  // const [checked, setChecked] = useState(true);
   
-  useEffect(() => {
-    setChecked(true);
-  }, []);
+  // useEffect(() => {
+  //   setChecked(true);
+  // }, []);
 
   let data = {
     email: emailInput,
