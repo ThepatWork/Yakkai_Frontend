@@ -96,6 +96,9 @@
   background: linear-gradient(90deg, #007db7 0%, #55cadf 100%);
   box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.361);
 }
+.btn_home_navbar{
+  font-family: 'Noto Sans Thai', sans-serif !important;
+}
 
 @media (max-width: 365px) {
   .band {
