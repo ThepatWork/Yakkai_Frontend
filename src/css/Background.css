@@ -97,7 +97,7 @@
 }
 
 .Texttoppic {
-    font-family: 'Noto Sans Thai', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif !important;
     font-size: 35px;
     color: black;
 }

@@ -63,7 +63,7 @@ const CreateUser = () => {
               <Box mb={2} marginLeft={-2.5}>
                 <FormControl sx={{ width: '90%' }}>
                   <input
-                    placeholder="ชื่อ"
+                    placeholder="ชื่อ*"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                     className="ThepatforInput"
@@ -74,7 +74,7 @@ const CreateUser = () => {
                 <FormControl sx={{ width: '90%' }}>
                   <input
                     className="ThepatforInput"
-                    placeholder="สกุล"
+                    placeholder="สกุล*"
                     value={surname}
                     onChange={(event) => setSurname(event.target.value)}
                   />
@@ -89,7 +89,7 @@ const CreateUser = () => {
                     <span className="TP_span_create_user" style={{ width: '90px' }}> หญิง </span>
                   </label>
                   <label className="TP_label_create_user"> <input type="radio" value="อื่น ๆ" checked={gender === 'อื่น ๆ'} onChange={handleChange} />
-                    <span className="TP_span_create_user" style={{ width: '90px' }}> อื่นๆ </span>
+                    <span className="TP_span_create_user" style={{ width: '90px' }}> ไม่ระบุ </span>
                   </label>
                 </div>
               </Box>
@@ -99,7 +99,7 @@ const CreateUser = () => {
                     type="tel"
                     maxLength={10}
                     className="ThepatforInput"
-                    placeholder="เบอร์โทรศัพท์"
+                    placeholder="เบอร์โทรศัพท์*"
                     value={phone}
                     onChange={(event) => setPhone(event.target.value)}
                   />
@@ -124,7 +124,7 @@ const CreateUser = () => {
                   <input
                     type="email"
                     className="ThepatforInput"
-                    placeholder="อีเมล"
+                    placeholder="อีเมล*"
                     value={email}
                     onChange={(event) => setEmail(event.target.value.toLowerCase())}
                   />
@@ -135,7 +135,7 @@ const CreateUser = () => {
                   <input
                     type="password"
                     className="ThepatforInput"
-                    placeholder="รหัสผ่าน"
+                    placeholder="รหัสผ่าน*"
                     value={passworld1}
                     onChange={(event) => setPassworld1(event.target.value)}
                   />
@@ -146,7 +146,7 @@ const CreateUser = () => {
                   <input
                     type="password"
                     className="ThepatforInput"
-                    placeholder="ระบุรหัสผ่านอีกครั้ง"
+                    placeholder="ระบุรหัสผ่านอีกครั้ง*"
                     value={passworld2}
                     onChange={(event) => setPassworld2(event.target.value)}
                   />
