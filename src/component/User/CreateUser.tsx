@@ -44,7 +44,7 @@ const CreateUser = () => {
 
   return (
     <div className="pageSignUp">
-      <div className="contentPage">
+      <div className="contentPage" style={{width:'98%'}}>
         <Grid container spacing={3}>
 
           <Grid item xs={12} sm={6} >
@@ -59,7 +59,7 @@ const CreateUser = () => {
 
           <Grid item xs={12} sm={5.6}>
             <div className="backform">
-              <p className="Texttoppic" style={{ marginTop: '10px', marginBottom: '20px' }}>SIGN UP</p>
+              <p className="Texttoppic" style={{ marginTop: '10px', marginBottom: '20px' }}>สมัครสมาชิก</p>
               <Box mb={2} marginLeft={-2.5}>
                 <FormControl sx={{ width: '90%' }}>
                   <input
@@ -158,7 +158,7 @@ const CreateUser = () => {
           <Grid item xs={12} sm={12}>
             <Box>
               <Button variant="contained" onClick={handleSubmit} className="TP_fun_button" >
-                SIGN UP
+                สมัครสมาชิก
               </Button>
             </Box>
           </Grid>

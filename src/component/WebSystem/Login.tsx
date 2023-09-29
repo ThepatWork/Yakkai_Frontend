@@ -113,7 +113,7 @@ function Login() {
                 <div className="text-containercheckbox" style={{ marginLeft: '10px', color: '#333' }}>แสดงรหัสผ่าน</div>
                 <div className="link-containercheckbox">
                   <a href={PortFrontend + "/forget_password"} className="forgetpass">
-                    Forget Password?
+                    ลืมรหัสผ่าน?
                   </a>
                 </div>
               </div>
@@ -122,7 +122,7 @@ function Login() {
               </div>
             </form>
             <div className='cover_btn1_login'>
-              <a href={PortFrontend + "/CreateUser"} className="dnthave"> Don’t have an account? Sign up </a>
+              <a href={PortFrontend + "/CreateUser"} className="dnthave"> ยังไม่มีบัญชีใช่ไหม สมัครสมาชิกใหม่ </a>
             </div>
           </div>
         </div>
