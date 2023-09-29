@@ -102,3 +102,16 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .btn_home_navbar{
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn_home_navbar{
+    font-size: 16px !important;
+    font-family: 'Noto Sans Thai', sans-serif !important;
+  }
+}
